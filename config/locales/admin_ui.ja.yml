@@ -1,0 +1,325 @@
+#-*- coding:utf-8 -*-
+en:
+  locomotive:
+    buttons:
+      login: ログイン
+      send_password: 送信する
+      change_password: 変更する
+      new_item: "+ 追加"
+      switch_to_site: Go
+      delete: "削除"
+      close: "閉じる"
+
+    locales:
+      en: English
+      de: German
+      fr: French
+      pt-BR: "Brazilian Portuguese"
+      it: Italian
+      nl: Dutch
+      nb: Norwegian
+      es: Spanish
+      ru: Russian
+      et: Estonian
+      ja: 日本語
+
+    messages:
+      confirm: 本当に良いですか?
+      sending_form: フォームを送信しています。
+
+    shared:
+      header:
+        welcome: ようこそ %{name} さん
+        see: サイトを確認する
+        switch: 他のサイトに移動する
+        help: ヘルプ
+        logout: ログアウト
+      menu:
+        contents: コンテンツ
+        assets: アセット
+        settings: 設定
+        pages: ページ
+        snippets: スニペット
+        account: マイアカウント
+        site: サイト
+        theme_assets: テーマファイル
+        translations: 翻訳
+      form:
+        change_file: 変更する
+        delete_file: 削除する
+        cancel: キャンセル
+      form_actions:
+        back: 保存しないで戻る
+        create: 作成する
+        update: 保存する
+        send: 送信する
+        disable_with: 送信中...
+      list:
+        untranslated: 未翻訳
+      footer:
+        who_is_behind: "LocomotiveCMSは%{development}により開発され、<a href=\"http://www.sachagreif.com\">Sacha Greif</a>によりデザインされています。 &mdash; <small>バージョン</small> %{version}"
+
+    errors:
+      "500":
+        title: アプリケーションエラー
+        notice: "申し訳ありません。アプリケーションに問題が発生しました。"
+        link: "&rarr; アプリケーションに戻る"
+      "404":
+        title: ページが見つかりません
+        notice: "リクエストされたページはありません。"
+        link: "&rarr; アプリケーションに戻る"
+
+    notifications:
+      new_content_entry:
+        subject: "[%{domain}][%{type}] 新規エントリ"
+        title: "%{name} さん、サイト<b>%{domain}</b>の新規インスタンスが%{date}に作成されたことをお知らせします。"
+        type: "モデル: %{type}"
+
+    sites_picker:
+      new: + 新規サイト
+
+    custom_fields:
+      edit:
+        title: カスタムフィールドの編集
+      text_formatting:
+        none: なし
+        html: HTML
+      types:
+        file:
+          delete_file: ファイルを削除する
+        has_many:
+          empty: リストにエントリはありません
+          new_entry: + 新規エントリ
+        many_to_many:
+          empty: リストにエントリはありません。下のドロップダウンからエントリを追加して下さい
+
+      form:
+        required: 必須
+        default_label: フィールド名
+        select_options:
+          ask_name: オプションのラベルを入力
+
+    sessions:
+      new:
+        title: ログイン
+        link: パスワードを忘れました
+        email: メールアドレス
+        password: パスワード
+
+    passwords:
+      new:
+        title: パスワードの再発行
+        link: "&rarr; ログインページに戻る"
+        email: メールアドレス
+      edit:
+        title: パスワードの更新
+        link: "&rarr; ログインページに戻る"
+        password: 新しいパスワード
+        password_confirmation: 新しいパスワードの確認
+
+    pages:
+      index:
+        title: ページの一覧
+        help: "ページはツリー構造で管理されます。ページをフォルダのように並べ替えることができます。"
+        no_items: "まだページはありません。<a href=\"%{url}\">新規ページ</a> から最初のページを作成してください。"
+        new: 新規ページ
+        latest_entries: 最近更新したページ
+      new:
+        title: 新規ページ
+        help: "下記のフォームを入力して新規ページを作成してください。初期状態ではページは公開されません。"
+      page:
+        updated_at: 更新日
+      edit:
+        show: 確認する
+        help: "ページタイトルはタイトルをクリックすることで変更できます。変更を反映するには「保存する」ボタンを押してください。"
+        ask_for_title: "新規ページのタイトルを入力"
+      form:
+        change_file: 変更する
+        delete_file: 削除する
+        cancel: キャンセル
+        default_block: 初期状態
+        cache_strategy:
+          none: なし
+          simple: シンプル
+          hour: 1時間
+          day: 1日
+          week: 1週間
+          month: 1ヶ月
+
+    snippets:
+      index:
+        title: スニペットの一覧
+        help: "スニペットはHTMLコードの断片です。フッターのようにサイト内の複数の場所で使用できます。"
+        no_items: "まだスニペットはありません。<a href=\"%{url}\">新規スニペット</a> から最初のスニペットを作成してください。"
+        new: 新規スニペット
+      new:
+        title: 新規スニペット
+        help: "下記のフォームを入力して新規スニペットを作成してください。"
+      edit:
+        title: スニペットの編集
+        help: "次のリキッドコードを使ってテンプレート内にスニペットを埋め込んでください。: <span class='code'>{% include '%{slug}' %}</span>."
+      snippet:
+        updated_at: 更新日
+
+    sites:
+      new:
+        title: 新規サイト
+        help: "下記のフォームを入力して新規サイトを作成してください。"
+      domains:
+        empty: "このサイトにはドメインが関連付けられていません。下記にドメインを追加してください。<b>DNSの更新を忘れないようにしてください。</b>"
+
+    current_site:
+      edit:
+        new_membership: 新規アカウント
+        help: "サイト名はサイト名をクリックすると変更できます。変更を反映するには「保存する」ボタンを押してください。"
+        ask_for_name: "新規サイト名を入力してください。"
+
+    memberships:
+      roles:
+        admin: 管理者
+        designer: デザイナー
+        author: ライター
+      new:
+        title: 新規メンバー
+        help: "追加するアカウントのメールアドレスを入力してください。存在しない場合、アカウント登録フォームが表示されます。"
+
+    accounts:
+      new:
+        title: 新規アカウント
+        help: "下記のフォームを入力して新規アカウントを作成してください。"
+
+    my_account:
+      edit:
+        help: "名前は名前をクリックすることで編集ができます。変更を反映するには「保存する」ボタンを押してください。"
+        new_site: 新規サイト
+        ask_for_name: "新規サイトの名前を入力してください。"
+
+    theme_assets:
+      index:
+        title: テーマファイルの一覧
+        help: "テーマファイルはレイアウトやスニペットに必要なファイルを管理する場所です。イメージギャラリーが必要な場合は、新規コンテントタイプを作成してください。<br/><b>警告:</b> あなたの権限によって、すべてのアセットが表示されるわけではありません。"
+        quick_upload: クイックアップロード
+        new: 新規ファイル
+        snippets: スニペット
+        css_and_js: スタイルシートとjavascript
+        fonts: フォント
+        images: イメージ
+        media: メディア
+        no_items: "まだファイルはありません。"
+      asset:
+        updated_at: 更新日
+      new:
+        title: 新規ファイル
+        help: "ファイルをアップロードするか、スタイルシートかjavascriptをコピー/ペーストして、テキスト入力することができます。"
+      edit:
+        title: "%{file} の編集"
+        help: "このアセットは次のURLで直接アクセスできます。: <a href='%{url}'>%{url}</a>"
+        help_image: "次のリキッドコードでイメージをテンプレート内またはスニペット内に挿入できます。: <span class='code'>{{ '%{path}' | theme_image_tag }}</span>.<br/>イメージのサイズ : <b>%{width}px x %{height}px</b>.<br/>"
+        help_javascript: "次のリキッドコードでjavascriptをテンプレート内またはスニペット内に挿入できます。 : <span class='code'>{{ '%{path}' | javascript_tag }}</span>.<br/>"
+        help_stylesheet: "次のリキッドコードでスタイルシートをテンプレート内またはスニペット内に挿入できます。 : <span class='code'>{{ '%{path}' | stylesheet_tag }}</span>.<br/>"
+      form:
+        picker_link: コードにファイルを挿入します。
+        choose_file: ファイルを選択する
+        choose_plain_text: テキスト入力をする
+      image_picker:
+        title: "テーマイメージを挿入する"
+        no_items: "まだイメージはありませせん。"
+        upload: "テーマイメージをアップロードする"
+    translations:
+      untranslated: "翻訳されていないロケール: %{list}"
+      index:
+        title: 翻訳
+        new_translation: 新規翻訳
+      form:
+        create: 新規翻訳
+        update: 翻訳の編集
+
+    content_assets:
+      picker:
+        title: "メディアを挿入する"
+        no_items: "まだメディアはありません。"
+        upload: "メディアをアップロードする"
+
+    content_types:
+      index:
+        new: 新規モデル
+        edit: モデルの編集
+      new:
+        title: 新規モデル
+        help: "データモデルの作成 (Projects, People, など) モデルには少なくとも１つのフィールドを登録します。、モデルでデータを作成する場合、最初のフィールドは必須になります。"
+      edit:
+        title: モデルの編集
+        help: "データモデルの作成 (Projects, People, など) モデルには少なくとも１つのフィールドを登録します。、モデルでデータを作成する場合、最初のフィールドは必須になります。"
+        show_entries: エントリを表示する
+        new_entry: 新規エントリ
+      form:
+        order_by:
+          created_at: '登録日'
+          updated_at: '更新日'
+          position_in_list: 指定順
+        order_direction:
+          asc: 昇順
+          desc: 降順
+
+    content_entries:
+      index:
+        title: '"%{type}"の一覧'
+        edit: モデルの編集
+        destroy: モデルの削除
+        download: エントリをダウンロード
+        new: 新規エントリ
+        category_noname: "名前なし"
+        latest_entries: "最新のエントリ"
+        updated_at: "更新日"
+      list:
+        no_items: "まだエントリはありません。<a href=\"%{url}\">新規エントリ</a>をクリックして最初のエントリを作成してください。"
+      new:
+        title: '%{type} &mdash; 新規エントリ'
+      edit:
+        title: '%{type} &mdash; エントリの編集'
+      form:
+        edit_select_options: 編集オプション
+        has_many:
+          new_entry: 新規エントリ
+
+    image_picker:
+      link: コードにイメージを挿入する
+
+    cross_domain_sessions:
+      new:
+        title: クロスドメイン認証
+        notice: 数秒後に別のサイトに移動します。
+
+    installation:
+      common:
+        title: 初めてのLocomotiveインストール
+        next: 次へ
+      step_1:
+        title: "ステップ 1/2 &mdash; アカウント作成"
+        name: アカウント名
+        email: メールアドレス
+        password: パスワード
+        password_confirmation: パスワード(確認)
+        done: "すでにアカウントを登録しています。:<br/><strong>%{name}</strong>, <em>%{email}</em>"
+        next: アカウントを作成する
+      step_2:
+        title: "ステップ 2/2 &mdash; 最初のサイトを作成"
+        explanations: "もうすこしで完成です。サイト名を入力して、デフォルトのロケールを選択してください。"
+        default_site_locale: ロケール
+        default_site_locales_hints: その他のロケールは設定パネルから追加できます。
+        next: サイトを作成する
+
+    public:
+      pages:
+        show_toolbar:
+          statuses:
+            loading: "ロードしています...."
+            disabled: "インラインエディタは無効化されています"
+          labels:
+            save_changes: "変更を保存する: "
+            editing_mode: "編集モード: "
+            lang: "言語: "
+          buttons:
+            back: バックオフィスに戻る
+            confirm: 確認する
+            cancel: キャンセル
