@@ -1,0 +1,43 @@
+en:
+  date:
+    formats:
+      default: "%Y年%m月%d日"
+
+  mongoid:
+    errors:
+      messages:
+        blank_on_locale: "は必須項目です"
+
+  errors:
+      messages:
+        domain_taken: "%{value} は登録済みです"
+        invalid_domain: "%{value} は不正な値です"
+        needs_admin_account: "最低でも１つの管理者アカウントが必要です"
+        protected_page: "indexページと404ページは削除できません。"
+        extname_changed: "新規ファイルに拡張子がありません"
+        array_too_short: "は小さすぎます (最小値は %{count} です)"
+        invalid_theme_file: "は必須項目か、zip圧縮ファイルではありません"
+        site:
+          default_locale_removed: The previous default locale can not be removed right away.
+        page:
+          liquid_syntax: "Liquid Syntax error ('%{error}' on '%{fullpath}')"
+          liquid_extend: "The page '%{fullpath}' extends a template which does not exist"
+          liquid_translation: "The page '%{fullpath}' extends a template which is not translated"
+        too_few_custom_fields: "At least, one custom field is required"
+        security: "presents a security problem"
+
+  attributes:
+    defaults:
+      pages:
+        index:
+          title: "Home page"
+          body: "Content of the home page"
+        "404":
+          title: "Page not found"
+          body: "Content of the 404 page"
+        other:
+          body: "{% extends 'parent' %}"
+
+  pagination:
+    previous: "&laquo; Previous"
+    next: "Next &raquo;"
