@@ -29,9 +29,27 @@ window.Aloha.settings =
         crop:   false
 
   i18n:
-    available: ['en', 'fr', 'pt-BR', 'es', 'de', 'no', 'ru', 'nl']
+    available: ['en', 'fr', 'pl', 'pt-BR', 'es', 'de', 'no', 'ru', 'nl', 'ja']
 
   sidebar:
     disabled: true
 
-
+  toolbar:
+    tabs:
+      [
+        {
+          label: 'tab.format.label'
+        },
+        {
+          label: 'tab.insert.label',
+          showOn: { scope: 'Aloha.continuoustext' },
+          exclusive: true,
+          components: [
+            [
+              'createTable', 'characterPicker', 'insertLink',
+              'insertAbbr', 'insertToc','insertHorizontalRule',
+              'insertTag', 'insertlocomotivemedia'
+            ]
+          ]
+        }
+      ]

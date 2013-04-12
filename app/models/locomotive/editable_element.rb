@@ -1,7 +1,8 @@
 module Locomotive
   class EditableElement
 
-    include ::Mongoid::Document
+    # include ::Mongoid::Document
+    include Locomotive::Mongoid::Document
 
     ## fields ##
     field :slug
@@ -38,7 +39,10 @@ module Locomotive
     # Determines if the current element can be edited in the back-office
     #
     def editable?
-      !self.disabled? && self.locales.include?(::Mongoid::Fields::I18n.locale.to_s) && (!self.fixed? || !self.from_parent?)
+      !self.disabled? &&
+      self.locales.include?(::Mongoid::Fields::I18n.locale.to_s) &&
+      (!self.fixed? || !self.from_parent?) &&
+      !self.destroyed?
     end
 
     def _run_rearrange_callbacks
@@ -104,7 +108,7 @@ module Locomotive
         "template_dependencies.#{locale}" => { '$in' => [self.page._id] },
         'editable_elements.fixed'         => true,
         'editable_elements.block'         => self.block,
-        'editable_elements.slug'          => self.slug
+        'editable_elements.slug'          => self.slug,
       }
     end
 

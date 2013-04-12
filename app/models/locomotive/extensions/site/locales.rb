@@ -19,6 +19,14 @@ module Locomotive
 
         end
 
+        # Tell if the site serves other locales than the default one.
+        #
+        # @return [ Boolean ] True if the number of locales is greater than 1
+        #
+        def localized?
+          self.locales.size > 1
+        end
+
         # Returns the fullpath of a page in the context of the current locale (I18n.locale)
         # or the one passed in parameter. It also depends on the default site locale.
         #
@@ -30,10 +38,10 @@ module Locomotive
         #   # context 2: i18n.locale is 'fr'
         #   contact_us.fullpath <= 'fr/nous_contacter'
         #
-        # @params [ Page ] page The page we want the localized fullpath
-        # @params [ String ] locale The optional locale in place of the current one
+        # @param [ Page ] page The page we want the localized fullpath
+        # @param [ String ] locale The optional locale in place of the current one
         #
-        # @returns [ String ] The localized fullpath according to the current locale
+        # @return [ String ] The localized fullpath according to the current locale
         #
         def localized_page_fullpath(page, locale = nil)
           return nil if page.fullpath_translations.blank?

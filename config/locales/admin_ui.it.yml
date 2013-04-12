@@ -163,6 +163,7 @@ it:
         en: Inglese
         de: Tedesco
         fr: Francese
+        pl: Polacco
         pt-BR: "Portoghese Brasiliano"
         it: Italiano
         nl: Olandese
@@ -170,6 +171,7 @@ it:
         es: Spagnolo
         ru: Russo
         et: Estone
+        ja: Giapponese
         ask_for_name: "Prego, digita il tuo nome"
 
     theme_assets:

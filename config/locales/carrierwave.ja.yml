@@ -1,4 +1,4 @@
-en:
+ja:
   carrierwave:
     errors:
-      integrity: 'は許可されているファイルタイプではありません'
+      integrity: 'は許可されていないファイルタイプです。'

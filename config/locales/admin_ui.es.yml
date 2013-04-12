@@ -163,6 +163,7 @@ es:
         en: Inglés
         de: Alemán
         fr: Francés
+        pl: polaco
         pt-BR: "Portugués (Brasil)"
         it: Italiano
         nl: holandés
@@ -170,6 +171,7 @@ es:
         es: Español
         ru: Ruso
         et: Estonio
+        ja: Japonés
         ask_for_name: "Por favor escriba su nuevo nombre"
 
     theme_assets:

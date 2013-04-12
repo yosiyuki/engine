@@ -19,7 +19,7 @@ Feature: Manage my site
     When I fill in "Name" with "Acme"
     And I fill in "Subdomain" with "acme"
     And I press "Create"
-    Then I should see "Site was successfully created."
+    Then I should see "Site was successfully created." in the html code
     And I should be a administrator of the "Acme" site
 
   @javascript
@@ -36,3 +36,10 @@ Feature: Manage my site
   Scenario: Removing a membership
     Given I am an authenticated user
     Then I should be able to remove a membership from my site
+
+  @javascript
+  Scenario: Saving a site with AJAX
+    Given I am an authenticated user
+    Then I should be able to save the site with AJAX
+    Given multi_sites is disabled
+    Then I should be able to save the site with AJAX

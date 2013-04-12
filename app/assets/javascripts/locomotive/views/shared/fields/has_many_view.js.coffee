@@ -70,6 +70,7 @@ class Locomotive.Views.Shared.Fields.HasManyView extends Backbone.View
       el:           $("##{@options.name}-template-entry")
       parent_view:  @
       model:        @options.new_entry.clone() # by default, it does not matter
+      namespace:    @options.name # to avoid dom conflicts
 
     @target_entry_view.render()
 
@@ -100,7 +101,7 @@ class Locomotive.Views.Shared.Fields.HasManyView extends Backbone.View
   remove_entry: (event) ->
     event.stopPropagation() & event.preventDefault()
 
-    if confirm($(event.target).attr('data-confirm'))
+    if confirm($(event.target).data('confirm'))
       entry = @get_entry_from_element($(event.target))
       entry.set _destroy: true
 

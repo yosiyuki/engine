@@ -43,7 +43,7 @@
     },
 
     open : function(f, p) {
-      console.log(f);
+      // console.log(f);
 
       f = f || {};
       p = p || {};
@@ -125,7 +125,7 @@
       // iFramed document
       else
       {
-        console.log(f);
+        // console.log(f);
         var iframe = $('<iframe />', {
           id: id + '_ifr',
           frameborder: 0

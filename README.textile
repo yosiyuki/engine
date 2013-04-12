@@ -2,6 +2,9 @@ h1. Locomotive CMS
 
 "!https://secure.travis-ci.org/locomotivecms/engine.png!":http://travis-ci.org/locomotivecms/engine
 
+"!https://codeclimate.com/github/locomotivecms/engine.png!":https://codeclimate.com/github/locomotivecms/engine
+
+"!https://gemnasium.com/locomotivecms/engine.png(Dependency Status)!":https://gemnasium.com/locomotivecms/engine
 
 Locomotive is a simple but powerful CMS based on liquid templates and mongodb database. At my company ("NoCoffee":http://www.nocoffee.fr), we use it for our clients when they request a simple website.
 
@@ -24,7 +27,7 @@ h2. Gems
 
 Here is a short list of main gems / technologies used in the application.
 
-* Rails 3.2.5
+* Rails 3.2.13
 * Mongoid 2.4.9 (with MongoDB 2.0)
 * Liquid
 * Devise
@@ -36,7 +39,7 @@ Here is a short list of main gems / technologies used in the application.
 
 h2. Installation
 
-See the "installation documentation on the official website":http://doc.locomotivecms.com/installation/requirements
+See the "installation documentation on the official website":http://doc.locomotivecms.com
 
 h2. Upgrading
 
@@ -44,7 +47,7 @@ We work on the procedure to upgrade from a previous version of the engine (below
 
 h2. Community
 
-* Get help or discuss locomotive CMS at the "LocomotiveCMS Google group":https://groups.google.com/forum/?fromgroups#!forum/locomotivecms or the "LocomotiveCMS Discussion Forums":http://locomotive.vanillaforums.com/ (deprecated)
+* Get help or discuss locomotive CMS at the "LocomotiveCMS Google group":https://groups.google.com/forum/?fromgroups#!forum/locomotivecms
 * Join us on IRC "#locomotivecms at irc.freenode.net!":http://webchat.freenode.net/
 * "Follow us on twitter":http://twitter.com/locomotivecms
 
@@ -80,9 +83,11 @@ h2. Credits
 
 "Emmanuel Grard":http://www.grardesign.com designed the awesome locomotive illustration in the locomotivecms.com landing page.
 
+"Font Awesome":http://fortawesome.github.com/Font-Awesome for providing the best icons. Make the whole back-office Retina-ready.
+
 h2. Contact
 
 Feel free to contact me at didier at nocoffee dot fr.
 
-Copyright (c) 2012 NoCoffee, released under the MIT license
+Copyright (c) 2013 NoCoffee, released under the MIT license
 ...

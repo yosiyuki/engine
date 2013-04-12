@@ -1,103 +1,103 @@
-en:
+ja:
   formtastic:
     titles:
-      information: General information
-      advanced_options: Advanced options
-      meta: SEO Metadata
-      seo: SEO settings
-      robots_txt: Robots.txt file
-      code: Code
-      raw_template: Template
-      credentials: Credentials
-      language: Language
-      sites: Sites
-      access_points: Access points
-      memberships: Accounts
-      membership_email: Account email
-      file: File
-      preview: Preview
-      options: Advanced options
-      custom_fields: Custom fields
-      other_fields: Other information
-      presentation: Presentation
-      attributes: Attributes
-      upload: Upload
+      information: 全般
+      advanced_options: 詳細設定
+      meta: SEO meta データ
+      seo: SEO設定
+      robots_txt: Robots.txtファイル
+      code: コード
+      raw_template: テンプレート
+      credentials: 身分
+      language: 言語
+      sites: サイト
+      access_points: アクセスポイント
+      memberships: アカウント
+      membership_email: メールアドレス
+      file: ファイル
+      preview: プレビュー
+      options: オプション
+      custom_fields: カスタムフィールド
+      other_fields: その他のフィールド
+      presentation: プレゼンテーション
+      attributes: 属性
+      upload: アップロード
     labels:
       theme_asset:
-        plain_text_name: File name
-        content_type: File type
+        plain_text_name: ファイル名
+        content_type: ファイルタイプ
         new:
-          source: File
+          source: ファイル
         edit:
-          source: Replace file
+          source: 新しいファイル
       custom_fields:
         field:
-          name: Alias
+          name: エイリアス
       content_type:
-        raw_item_template: Item template
+        raw_item_template: アイテムテンプレート
         public_submission_enabled: Public submission
         public_submission_accounts: Notified Accounts
         "custom_fields/field":
-          select_options: "Options"
+          select_options: オプション
       content_entry:
-        _slug: Permalink
+        _slug: 固定リンク
       account:
         edit:
-          locale: UI Language
-          password: New password
-          password_confirmation: New password confirmation
+          locale: 言語
+          password: 新しいパスワード
+          password_confirmation: 新しいパスワード（確認）
       page:
-        seo_title: Title
-        target_klass_name: Model
+        seo_title: タイトル
+        target_klass_name: モデル
       site:
-        locales: Languages
-
+        locales: 言語
     hints:
       page:
-        handle: "Unique identifier to retrieve this page within an external controller instance"
-        published: "Only authenticated accounts can view unpublished pages."
-        cache_strategy: "Cache the page for better performance. The 'Simple' choice is a good compromise."
-        templatized: "Use the page as a template for a model you defined."
-        listed: "Control whether to show the page from generated menus."
+        handle: "外部からアクセスするための一意な識別子"
+        published: "公開前のページは認証済みアカウントのみ閲覧可能です。"
+        cache_strategy: "パフォーマンス向上のためキャッシュを行なってください。 The 'Simple' choice is a good compromise."
+        templatized: "あなたが定義したモデルのためのテンプレートとしてページを使います。"
+        listed: "ページがメニューでどのように表示されるか設定することができます。"
         target_klass_name: "The type of content this page will be a template for."
-        seo_title: "Define a page title which should be used as the value for the title tag in the head section. Leave it empty if you want to use the default value from the site settings."
-        meta_keywords: "Overrides the site's meta keywords used within the head tag of the page. They are separated by a comma."
-        meta_description: "Overrides the site's meta description used within the head tag of the page."
+        seo_title: "デフォルトのtitleタグを上書きすることができます。"
+        meta_keywords: "デフォルトのmeta keywordタグを上書きすることができます。コンマで区切ることによって複数入力できます。"
+        meta_description: "デフォルトのmeta descriptionタグを上書きすることができます。"
       snippet:
-        slug: "You need to know it in order to insert the snippet inside a page"
+        slug: "ページ内スニペットを挿入するためにはそれを知っている必要があります。"
       site:
-        locales: "Drag&drop a flag to the first position to make it the default one."
-        seo_title: "Define a global value here which should be used as the value for the title tag in the head section."
-        meta_keywords: "Meta keywords used within the head tag of the page. They are separated by a comma. Required for SEO."
-        meta_description: "Meta description used within the head tag of the page. Required for SEO."
-        domain_name: "ex: locomotiveapp.org"
-        robots_txt: "Content of the <span class='code'>/robots.txt</span> file. Check the following <a href='http://www.w3.org/TR/html4/appendix/notes.html#h-B.4.1.1'>url</a> for more information."
+        locales: "ドラッグ&ドロップによって言語の優先順位を入れ替えられます。"
+        seo_title: "サイト全体で使用するtitleタグのデフォルト値を設定できます。"
+        meta_keywords: "サイト全体で使用するmeta keywordタグのデフォルト値を設定できます。"
+        meta_description: "サイト全体で使用するmeta descriptionタグのデフォルト値を設定できます。"
+        domain_name: "例：locomotiveapp.org"
+        robots_txt: "<span class='code'>/robots.txt</span>に記述する内容を設定できます。詳細は<a href='http://www.w3.org/TR/html4/appendix/notes.html#h-B.4.1.1'>url</a>を参照してください。"
       theme_asset:
-        slug: "You do not need to add the extension file (.css or .js)"
+        slug: "拡張子は入力不要です。"
         edit:
-          source: "You can replace it by a file of the same extension"
+          source: "同じ拡張子のファイルによって置き換えることができます。"
+      translation:
+        key: "ハイフンではなくアンダースコアを使用してください（例：welcome_message）"
       asset:
-        source: "All file types are accepted."
+        source: "任意のファイル形式が利用できます。"
         edit:
-          source: "The current file is available here %{url}"
+          source: "このファイルは次のURLで参照できます。 %{url}"
         update:
-          source: "The current file is available here %{url}"
+          source: "このファイルは次のURLで参照できます。 %{url}"
       content_entry:
-        _slug: "Property used to generate the url of a page working as a template for this content type (ex: \"template_page/{{ your_object._permalink }})\"."
-        seo_title: "The value you fill in will replace the SEO title of the templatized page related to your model."
-        meta_keywords: "Overrides the site's meta keywords used within the head tag of the page. They are separated by a comma."
-        meta_description: "Overrides the site's meta description used within the head tag of the page."
+        _slug: "URL生成に使用されるプロパティ（例：template_page/{{ your_object._permalink }}）"
+        seo_title: "SEO用のtitleタグを上書きすることができます。"
+        meta_keywords: "SEO用のmeta keywordタグを上書きすることができます。"
+        meta_description: "SEO用のmeta descriptionタグを上書きできます。"
       import:
-        source: "A zipfile containing a database.yml along with assets and templates"
-        samples: "If enabled, the import process will also copy contents and assets"
-        reset: "If enabled, all the data of your site will be destroyed before importing the new site"
+        source: "database.ymlを含んだZipファイル"
+        samples: "インポート時にコンテンツ及びアセットをコピーします。"
+        reset: "インポート前に現在のサイトを完全に削除します。"
       content_type:
-        name: "We suggest you to type the plural form of the model. Ex: Projects, Recipes, Posts, Articles, ...etc"
-        slug: "It will be used as the name of the collection in the liquid templates. Ex: <span class='code'>{{ contents.my_projects }}</span>"
-        raw_item_template: "You can customize the text displayed for each item in the list. Simply use Liquid. Ex: <span class='code'>{{ entry.name }})</span>"
+        name: "モデルには複数形を使用することを推奨します。（例：Projects, Posts, Articlesなど）"
+        slug: "テンプレートでコレクション名として使われます。（例：<span class='code'>{{ contents.my_projects }}</span>）"
+        raw_item_template: "リストに含まれるアイテムについて表示されるテキストをカスタマイズすることができます。 Simply use Liquid. （例：<span class='code'>{{ entry.name }})</span>）"
         public_submission_enabled: "It is used to let people from outside to create new entries (example: messages in a contact form)"
         public_submission_accounts: "If the public submission option is enabled and for each entry created, sends a notification email to the accounts listed above."
         "custom_fields/field":
-          name: "Name of the property for liquid templates. Ex: <span class='code'>&#123;&#123; your_object.&lt;name_of_your_field&gt; &#125;&#125;</span>"
-          hint: "Text displayed in the model form just below the field"
-
+          name: "リキッドテンプレートのプロパティ名（例：<span class='code'>&#123;&#123; your_object.&lt;name_of_your_field&gt; &#125;&#125;</span>）"
+          hint: "モデルフォームの下に表示するテキスト"

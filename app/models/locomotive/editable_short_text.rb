@@ -46,10 +46,6 @@ module Locomotive
       end
     end
 
-    def as_json(options = {})
-      Locomotive::EditableShortTextPresenter.new(self).as_json
-    end
-
     protected
 
     def propagate_content

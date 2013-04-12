@@ -1,14 +1,18 @@
 module Locomotive
   class AccountPresenter < BasePresenter
 
-    delegate :name, :email, :locale, :to => :source
+    ## properties ##
+    properties  :name, :email, :locale
+    property    :admin, only_getter: true
 
-    def admin
-      self.source.admin?
+    with_options only_setter: true do |presenter|
+      presenter.properties :password, :password_confirmation
     end
 
-    def included_methods
-      super + %w(name email locale admin)
+    ## other getters / setters ##
+
+    def admin
+      self.__source.admin?
     end
 
   end

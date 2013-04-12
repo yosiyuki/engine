@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
 
-  mount Locomotive::Engine => '/locomotive', :as => 'locomotive'
+  match '/_api' => 'locomotive/api/documentation#show'
 
-  match '/foo' => 'foo#index', :as => 'foo'
+  match '/foo' => 'foo#index', as: 'foo'
+
+  mount Locomotive::Engine => '/locomotive', as: 'locomotive'
 
 end

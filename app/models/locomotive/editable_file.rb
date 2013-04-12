@@ -67,10 +67,6 @@ module Locomotive
       super
     end
 
-    def as_json(options = {})
-      Locomotive::EditableFilePresenter.new(self).as_json
-    end
-
     protected
 
     def propagate_content

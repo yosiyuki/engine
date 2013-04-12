@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe Locomotive::Extensions::Page::Redirect do
 
-  let(:page) { Factory.build(:page, :redirect => true, :redirect_url => 'http://www.locomotivecms.com') }
+  let(:page) { FactoryGirl.build(:page, :redirect => true, :redirect_url => 'http://www.locomotivecms.com') }
 
   describe 'redirect option enabled' do
 
@@ -15,6 +15,12 @@ describe Locomotive::Extensions::Page::Redirect do
       page.redirect_url = ''
       page.valid?
       page.errors[:redirect_url].should == ["can't be blank"]
+    end
+
+    it 'requires the presence of the redirect type' do
+      page.redirect_type = ''
+      page.valid?
+      page.errors[:redirect_type].should == ["can't be blank"]
     end
 
   end

@@ -7,8 +7,8 @@ module Locomotive
       :reserved_subdomains    => %w{www admin email blog webmail mail support help site sites},
       # :forbidden_paths      => %w{layouts snippets stylesheets javascripts assets admin system api},
       :reserved_slugs         => %w{stylesheets javascripts assets admin locomotive images api pages edit},
-      :locales                => %w{en de fr pt-BR it nl nb es ru et},
-      :site_locales           => %w{en de fr pt-BR it nl nb es ru et},
+      :locales                => %w{en de fr pl pt-BR it nl nb es ru et ja},
+      :site_locales           => %w{en de fr pl pt-BR it nl nb es ru et ja},
       :cookie_key             => '_locomotive_session',
       :enable_logs            => false,
       :delayed_job            => false,
@@ -55,6 +55,10 @@ module Locomotive
 
     def manage_subdomain_n_domains?
       self.manage_subdomain? && self.manage_domains?
+    end
+
+    def multi_sites_or_manage_domains?
+      self.multi_sites? || self.manage_domains?
     end
 
     def reserved_subdomains

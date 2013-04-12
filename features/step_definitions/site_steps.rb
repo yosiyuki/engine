@@ -28,6 +28,11 @@ Given /^the site "(.*?)" has locales "(.*?)"$/ do |name, locales|
   site.save
 end
 
+Given /^multi_sites is disabled$/ do
+  Locomotive.config.multi_sites = false
+  Locomotive.after_configure
+end
+
 Then /^I should be a administrator of the "([^"]*)" site$/ do |name|
   site = Locomotive::Site.where(:name => name).first
   m = site.memberships.detect { |m| m.account_id == @admin._id && m.admin? }
@@ -43,7 +48,9 @@ end
 Then /^I should be able to add a domain to my site$/ do
   visit edit_current_site_path
 
-  fill_in 'domain', :with => 'monkeys.com'
+  within('#site_domains_input') do
+    fill_in 'domain', :with => 'monkeys.com'
+  end
   click_link '+ add'
   click_button 'Save'
 
@@ -57,7 +64,7 @@ Then /^I should be able to remove a domain from my site$/ do
 
   visit edit_current_site_path
 
-  click_link 'x'
+  click_link 'Delete'
   click_button 'Save'
 
   page.should have_content 'My site was successfully updated'
@@ -70,9 +77,24 @@ Then /^I should be able to remove a membership from my site$/ do
 
   visit edit_current_site_path
 
-  click_link 'x'
+  click_link 'Delete'
   click_button 'Save'
 
   page.should have_content 'My site was successfully updated'
   @site.reload.memberships.collect(&:account).should_not include(@new_account)
+end
+
+Then /^I should be able to save the site with AJAX$/ do
+  visit edit_current_site_path
+
+  # Prevent the default behaviour so we're sure it's AJAX
+  js = <<-EOF
+    $('form').submit(function(event) {
+      event.preventDefault();
+    });
+  EOF
+  page.execute_script(js)
+
+  click_button 'Save'
+  page.should have_content 'My site was successfully updated'
 end

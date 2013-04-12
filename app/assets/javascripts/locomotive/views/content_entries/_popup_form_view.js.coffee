@@ -18,16 +18,17 @@ class Locomotive.Views.ContentEntries.PopupFormView extends Locomotive.Views.Con
     @save_in_ajax event,
       headers:  { 'X-Flash': true }
       on_success: (response, xhr) =>
-        entry = new Locomotive.Models.ContentEntry(response)
+        entry = new Locomotive.Models.ContentEntry(JSON.parse(xhr.responseText))
         @options.parent_view.insert_or_update_entry(entry)
         @close()
 
   create_dialog: ->
     @dialog = $(@el).dialog
-      autoOpen: false
-      modal:    true
-      zIndex:   window.application_view.unique_dialog_zindex()
-      width:    770,
+      autoOpen:     false
+      modal:        true
+      dialogClass:  'content-entry-popup'
+      zIndex:       window.application_view.unique_dialog_zindex()
+      width:        770,
       create: (event, ui) =>
         $(@el).prev().find('.ui-dialog-title').html(@$('h2').html())
         @$('h2').remove()
@@ -36,7 +37,7 @@ class Locomotive.Views.ContentEntries.PopupFormView extends Locomotive.Views.Con
         actions.find('#close-link').click (event) => @close(event)
         actions.find('input[type=submit]').click (event) =>
           # since the submit buttons are outside the form, we have to mimic the behaviour of a basic form
-          $form = @el.find('form'); $buttons_pane = $(event.target).parent()
+          $form = @$el.find('form'); $buttons_pane = $(event.target).parent()
 
           $.rails.disableFormElements($buttons_pane)
 

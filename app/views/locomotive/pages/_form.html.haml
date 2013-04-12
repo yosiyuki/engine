@@ -5,7 +5,7 @@
 
 - content_for :backbone_view_data do
   :plain
-    page: #{j @page.to_presenter.as_json_for_html_view.to_json.html_safe}
+    page: #{j to_json(@page)}
 
 - if can?(:manage, @page)
 
@@ -48,10 +48,14 @@
 
     = f.input :redirect, :as => :'Locomotive::Toggle', :wrapper_html => { :style => "#{'display: none' if @page.templatized? || !@page.default_response_type?}" }
 
-    = f.input :cache_strategy, :as => :select, :collection => options_for_page_cache_strategy, :include_blank => false, :wrapper_html => { :style => "#{'display: none' if @page.redirect?}" }
-
     = f.input :redirect_url, :required => true, :wrapper_html => { :style => "#{'display: none' unless @page.redirect?}" }
+
+    = f.input :redirect_type, :as => :select, :collection => options_for_page_redirect_type, :include_blank => false, :wrapper_html => { :style => "#{'display: none' unless @page.redirect?}" }
+
+    = f.input :cache_strategy, :as => :select, :collection => options_for_page_cache_strategy, :include_blank => false, :wrapper_html => { :style => "#{'display: none' if @page.redirect?}" }
 
   = f.inputs :name => :raw_template, :class => "inputs foldable #{'folded' if inputs_folded?(@page)}" do
 
-    = f.input :raw_template, :as => :'Locomotive::Code'
+    = f.input :raw_template, :as => :'Locomotive::Code', :main_locale_template_url => page_main_template_path(@page)
+
+

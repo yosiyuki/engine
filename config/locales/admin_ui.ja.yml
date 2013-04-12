@@ -1,37 +1,37 @@
-#-*- coding:utf-8 -*-
-en:
+ja:
   locomotive:
     buttons:
       login: ログイン
-      send_password: 送信する
-      change_password: 変更する
-      new_item: "+ 追加"
-      switch_to_site: Go
-      delete: "削除"
-      close: "閉じる"
+      send_password: 送信
+      change_password: 更新
+      new_item: 新規作成
+      switch_to_site: 移動
+      delete: 削除
+      close: 閉じる
 
     locales:
-      en: English
-      de: German
-      fr: French
-      pt-BR: "Brazilian Portuguese"
-      it: Italian
-      nl: Dutch
-      nb: Norwegian
-      es: Spanish
-      ru: Russian
-      et: Estonian
+      en: 英語
+      de: ドイツ語
+      fr: フランス語
+      pl: ポーランド語
+      pt-BR: ブラジルポルトガル語
+      it: イタリア語
+      nl: オランダ語
+      nb: ノルウェー語
+      es: スペイン語
+      ru: ロシア語
+      et: エストニア語
       ja: 日本語
 
     messages:
-      confirm: 本当に良いですか?
-      sending_form: フォームを送信しています。
+      confirm: 本当によろしいですか？
+      sending_form: 送信しました。
 
     shared:
       header:
-        welcome: ようこそ %{name} さん
-        see: サイトを確認する
-        switch: 他のサイトに移動する
+        welcome: "ようこそ %{name}さん"
+        see: サイトを見る
+        switch: サイトを切り替える
         help: ヘルプ
         logout: ログアウト
       menu:
@@ -40,286 +40,296 @@ en:
         settings: 設定
         pages: ページ
         snippets: スニペット
-        account: マイアカウント
+        account: アカウント
         site: サイト
         theme_assets: テーマファイル
         translations: 翻訳
       form:
-        change_file: 変更する
-        delete_file: 削除する
+        change_file: 変更
+        delete_file: 削除
         cancel: キャンセル
       form_actions:
-        back: 保存しないで戻る
-        create: 作成する
-        update: 保存する
-        send: 送信する
-        disable_with: 送信中...
+        back: 保存せずに戻る
+        create: 新規作成
+        update: 保存
+        send: 送信
+        disable_with: "処理中..."
       list:
         untranslated: 未翻訳
       footer:
-        who_is_behind: "LocomotiveCMSは%{development}により開発され、<a href=\"http://www.sachagreif.com\">Sacha Greif</a>によりデザインされています。 &mdash; <small>バージョン</small> %{version}"
+        who_is_behind: "LocomotiveCMS is developed by %{development} and designed by <a href=\"http://www.sachagreif.com\">Sacha Greif</a> &mdash; <small>version</small> %{version}"
 
     errors:
       "500":
         title: アプリケーションエラー
-        notice: "申し訳ありません。アプリケーションに問題が発生しました。"
+        notice: サーバ側でエラーが発生しました。
         link: "&rarr; アプリケーションに戻る"
       "404":
-        title: ページが見つかりません
-        notice: "リクエストされたページはありません。"
+        title: ページが見つかりません。
+        notice: 要求されたページを見つけられませんでした。
         link: "&rarr; アプリケーションに戻る"
 
     notifications:
       new_content_entry:
         subject: "[%{domain}][%{type}] 新規エントリ"
-        title: "%{name} さん、サイト<b>%{domain}</b>の新規インスタンスが%{date}に作成されたことをお知らせします。"
-        type: "モデル: %{type}"
+        title: "こんにちは%{name}さん、<b>%{domain}</b>にて新しいエントリが%{date}に作成されました。"
+        type: "モデル：%{type}"
 
     sites_picker:
-      new: + 新規サイト
+      new: 新規作成
 
     custom_fields:
       edit:
-        title: カスタムフィールドの編集
+        title: カスタムフィールドを編集する
       text_formatting:
-        none: なし
+        none: None
         html: HTML
       types:
         file:
           delete_file: ファイルを削除する
         has_many:
-          empty: リストにエントリはありません
-          new_entry: + 新規エントリ
+          empty: リストは空です。
+          new_entry: エントリを新規作成する
         many_to_many:
-          empty: リストにエントリはありません。下のドロップダウンからエントリを追加して下さい
+          empty: リストは空です。下のセレクトボックスからエントリを追加してください。
 
       form:
-        required: 必須
+        required: 必須項目
         default_label: フィールド名
         select_options:
-          ask_name: オプションのラベルを入力
+          ask_name: オプションラベルを入力してください。
 
     sessions:
       new:
         title: ログイン
-        link: パスワードを忘れました
+        link: パスワードを忘れましたか？
         email: メールアドレス
         password: パスワード
 
     passwords:
       new:
-        title: パスワードの再発行
+        title: パスワードを忘れましたか？
         link: "&rarr; ログインページに戻る"
         email: メールアドレス
       edit:
-        title: パスワードの更新
+        title: パスワードを変更する。
         link: "&rarr; ログインページに戻る"
         password: 新しいパスワード
-        password_confirmation: 新しいパスワードの確認
+        password_confirmation: 新しいパスワード（確認）
 
     pages:
       index:
-        title: ページの一覧
-        help: "ページはツリー構造で管理されます。ページをフォルダのように並べ替えることができます。"
-        no_items: "まだページはありません。<a href=\"%{url}\">新規ページ</a> から最初のページを作成してください。"
+        title: ページ一覧
+        help: ページはツリー上に並んでいます。
+        no_items: "現在、ページが存在しません。<a href=\"%{url}\">こちら</a>から作成できます。"
         new: 新規ページ
-        latest_entries: 最近更新したページ
+        latest_entries: 最新ページ
       new:
         title: 新規ページ
-        help: "下記のフォームを入力して新規ページを作成してください。初期状態ではページは公開されません。"
+        help: "フォームを編集してください。（デフォルトではページは公開されません）"
       page:
-        updated_at: 更新日
+        updated_at: 更新日時
       edit:
-        show: 確認する
-        help: "ページタイトルはタイトルをクリックすることで変更できます。変更を反映するには「保存する」ボタンを押してください。"
-        ask_for_title: "新規ページのタイトルを入力"
+        show: 閲覧
+        help: "タイトルをクリックすると編集することができます。更新を保存するには保存ボタンをクリックしてください。"
+        ask_for_title: "新規ページのタイトルを入力してください。"
       form:
-        change_file: 変更する
-        delete_file: 削除する
+        change_file: 変更
+        delete_file: 削除
         cancel: キャンセル
-        default_block: 初期状態
+        default_block: デフォルト
         cache_strategy:
-          none: なし
-          simple: シンプル
+          none: None
+          simple: Simple
           hour: 1時間
           day: 1日
           week: 1週間
           month: 1ヶ月
+        redirect_type:
+          permanent: "Permanent (301)"
+          temporary: "Temporary (302)"
 
     snippets:
       index:
-        title: スニペットの一覧
-        help: "スニペットはHTMLコードの断片です。フッターのようにサイト内の複数の場所で使用できます。"
-        no_items: "まだスニペットはありません。<a href=\"%{url}\">新規スニペット</a> から最初のスニペットを作成してください。"
+        title: スニペット一覧
+        help: スニペットとはフッターなどサイトの各所で使用されるHTML片です。
+        no_items: "現在、スニペットが存在しません。<a href=\"%{url}\">こちら</a>から作成できます。"
         new: 新規スニペット
       new:
         title: 新規スニペット
-        help: "下記のフォームを入力して新規スニペットを作成してください。"
+        help: フォームを編集してください。
       edit:
-        title: スニペットの編集
-        help: "次のリキッドコードを使ってテンプレート内にスニペットを埋め込んでください。: <span class='code'>{% include '%{slug}' %}</span>."
+        title: スニペット編集
+        help: "スニペットをページで使用するためには次のリキッドコードを使用します。<span class='code'>{% include '%{slug}' %}</span>"
       snippet:
-        updated_at: 更新日
+        updated_at: 更新日時
 
     sites:
       new:
         title: 新規サイト
-        help: "下記のフォームを入力して新規サイトを作成してください。"
+        help: フォームを編集してください。
       domains:
-        empty: "このサイトにはドメインが関連付けられていません。下記にドメインを追加してください。<b>DNSの更新を忘れないようにしてください。</b>"
+        empty: "サイトに関連付けられたドメインは存在しません。Simply add your domains just below. <b>Do not forget to upgrade your DNS.</b>"
 
     current_site:
       edit:
-        new_membership: 新規アカウント
-        help: "サイト名はサイト名をクリックすると変更できます。変更を反映するには「保存する」ボタンを押してください。"
-        ask_for_name: "新規サイト名を入力してください。"
+        new_membership: アカウント追加
+        help: サイト名をクリックすると編集することができます。変更を保存するには保存ボタンをクリックしてください。
+        ask_for_name: 新しいサイト名を入力してください。
 
     memberships:
       roles:
         admin: 管理者
         designer: デザイナー
-        author: ライター
+        author: 作者
       new:
-        title: 新規メンバー
-        help: "追加するアカウントのメールアドレスを入力してください。存在しない場合、アカウント登録フォームが表示されます。"
+        title: 新規メンバーシップ
+        help: 追加するアカウントのメールアドレスを入力してください。メールアドレスが存在しない場合、アカウント作成画面に移動します。
 
     accounts:
       new:
         title: 新規アカウント
-        help: "下記のフォームを入力して新規アカウントを作成してください。"
+        help: フォームを編集してください。
 
     my_account:
       edit:
-        help: "名前は名前をクリックすることで編集ができます。変更を反映するには「保存する」ボタンを押してください。"
+        help: アカウント名をクリックすると編集することができます。変更を保存するには保存ボタンをクリックしてください。
         new_site: 新規サイト
-        ask_for_name: "新規サイトの名前を入力してください。"
+        ask_for_name: サイト名を入力してください。
 
     theme_assets:
       index:
-        title: テーマファイルの一覧
-        help: "テーマファイルはレイアウトやスニペットに必要なファイルを管理する場所です。イメージギャラリーが必要な場合は、新規コンテントタイプを作成してください。<br/><b>警告:</b> あなたの権限によって、すべてのアセットが表示されるわけではありません。"
+        title: テーマファイル一覧
+        help: "テーマファイルセクションはレイアウトやスニペットなどに必要となるファイルを管理する場所です。画像を管理する必要がある場合は新しいコンテンツタイプを作成してください。<br/><b>警告：</b>あなたに付与された権限によっては全て表示されないことがあります。"
         quick_upload: クイックアップロード
         new: 新規ファイル
         snippets: スニペット
-        css_and_js: スタイルシートとjavascript
+        css_and_js: CSS＆Javascript
         fonts: フォント
-        images: イメージ
+        images: 画像
         media: メディア
-        no_items: "まだファイルはありません。"
+        no_items: 現在、ファイルがありません。
       asset:
-        updated_at: 更新日
+        updated_at: 更新日時
       new:
         title: 新規ファイル
-        help: "ファイルをアップロードするか、スタイルシートかjavascriptをコピー/ペーストして、テキスト入力することができます。"
+        help: アップロードするファイルを選ぶかCSSやJavascriptをコピー&ペーストしてください。
       edit:
-        title: "%{file} の編集"
-        help: "このアセットは次のURLで直接アクセスできます。: <a href='%{url}'>%{url}</a>"
-        help_image: "次のリキッドコードでイメージをテンプレート内またはスニペット内に挿入できます。: <span class='code'>{{ '%{path}' | theme_image_tag }}</span>.<br/>イメージのサイズ : <b>%{width}px x %{height}px</b>.<br/>"
-        help_javascript: "次のリキッドコードでjavascriptをテンプレート内またはスニペット内に挿入できます。 : <span class='code'>{{ '%{path}' | javascript_tag }}</span>.<br/>"
-        help_stylesheet: "次のリキッドコードでスタイルシートをテンプレート内またはスニペット内に挿入できます。 : <span class='code'>{{ '%{path}' | stylesheet_tag }}</span>.<br/>"
+        title: "編集 %{file}"
+        help: "このアセットは次のURLから直接アクセスできます。<a href='%{url}'>%{url}</a>"
+        help_image: "テンプレートやスニペットで画像を使用するためには次のコードを使用します。<span class='code'>{{ '%{path}' | theme_image_tag }}</span>.<br/><b>%{width}px x %{height}px</b>.<br/>"
+        help_javascript: "テンプレートやスニペットでJavascriptを使用するためには次のコードを使用します。<span class='code'>{{ '%{path}' | javascript_tag }}</span>.<br/>"
+        help_stylesheet: "テンプレートやスニペットにCSSを適用するためには次のコードを使用します。<span class='code'>{{ '%{path}' | stylesheet_tag }}</span>.<br/>"
       form:
-        picker_link: コードにファイルを挿入します。
+        picker_link: ファイルを挿入する
         choose_file: ファイルを選択する
-        choose_plain_text: テキスト入力をする
+        choose_plain_text: テキストを選択する
       image_picker:
-        title: "テーマイメージを挿入する"
-        no_items: "まだイメージはありませせん。"
-        upload: "テーマイメージをアップロードする"
+        title: 画像を挿入する
+        no_items: 画像がありません。
+        upload: 画像をアップロードする
+
     translations:
-      untranslated: "翻訳されていないロケール: %{list}"
+      untranslated: "未翻訳ロケール：%{list}"
       index:
         title: 翻訳
-        new_translation: 新規翻訳
-      form:
-        create: 新規翻訳
-        update: 翻訳の編集
+        new: 新規翻訳
+        no_items: "現在、翻訳がありません。新規作成するには<a href=\"%{url}\">こちら</a>をクリックしてください。"
+        remove: "%{key}を削除する"
+      new:
+        title: 新規翻訳
+        help: "スニペットは<b>translate</b>リキッドタグによって全てのロケールで同じテンプレートを共有することができます。"
+      edit:
+        title: "編集 %{key}"
+        help: "次のコードによって翻訳キーを使用することができます。<span class='code'>{{ '%{key}' | translate }}</span>."
 
     content_assets:
       picker:
-        title: "メディアを挿入する"
-        no_items: "まだメディアはありません。"
-        upload: "メディアをアップロードする"
+        title: メディアを挿入する
+        no_items: メディアがありません。
+        upload: メディアをアップロードする
 
     content_types:
       index:
         new: 新規モデル
-        edit: モデルの編集
+        edit: モデル編集
       new:
         title: 新規モデル
-        help: "データモデルの作成 (Projects, People, など) モデルには少なくとも１つのフィールドを登録します。、モデルでデータを作成する場合、最初のフィールドは必須になります。"
+        help: モデルを作成します。（Projects, Peopleなど）モデルは1つ以上のフィールドを持つ必要があります。
       edit:
-        title: モデルの編集
-        help: "データモデルの作成 (Projects, People, など) モデルには少なくとも１つのフィールドを登録します。、モデルでデータを作成する場合、最初のフィールドは必須になります。"
-        show_entries: エントリを表示する
+        title: モデル編集
+        help: モデルは1つ以上のフィールドを持つ必要があります。
+        show_entries: エントリ閲覧
         new_entry: 新規エントリ
       form:
         order_by:
-          created_at: '登録日'
-          updated_at: '更新日'
-          position_in_list: 指定順
+          created_at: 作成日時
+          updated_at: 更新日時
+          position_in_list: 手動
         order_direction:
           asc: 昇順
           desc: 降順
 
     content_entries:
       index:
-        title: '"%{type}"の一覧'
-        edit: モデルの編集
-        destroy: モデルの削除
-        download: エントリをダウンロード
+        title: "%{type}一覧"
+        edit: モデル編集
+        destroy: モデル削除
+        download: エントリダウンロード
         new: 新規エントリ
-        category_noname: "名前なし"
-        latest_entries: "最新のエントリ"
-        updated_at: "更新日"
+        category_noname: "No name"
+        latest_entries: 最新エントリ
+        updated_at: 更新日時
       list:
-        no_items: "まだエントリはありません。<a href=\"%{url}\">新規エントリ</a>をクリックして最初のエントリを作成してください。"
+        no_items: "現在、エントリが存在しません。<a href=\"%{url}\">こちら</a>から作成してください。"
       new:
         title: '%{type} &mdash; 新規エントリ'
       edit:
-        title: '%{type} &mdash; エントリの編集'
+        title: '%{type} &mdash; エントリ編集'
       form:
-        edit_select_options: 編集オプション
+        edit_select_options: オプション編集
         has_many:
           new_entry: 新規エントリ
 
-    image_picker:
-      link: コードにイメージを挿入する
+    code_editing:
+      image_picker: コードに画像を挿入する。
+      copy_template: メインロケールからテンプレートをコピーする。
 
     cross_domain_sessions:
       new:
         title: クロスドメイン認証
-        notice: 数秒後に別のサイトに移動します。
+        notice: 数秒後にサイトを移動します。
 
     installation:
       common:
-        title: 初めてのLocomotiveインストール
+        title: Locomotive CMS 初期設定
         next: 次へ
       step_1:
-        title: "ステップ 1/2 &mdash; アカウント作成"
+        title: "Step 1/2 &mdash; アカウント作成"
         name: アカウント名
         email: メールアドレス
         password: パスワード
-        password_confirmation: パスワード(確認)
-        done: "すでにアカウントを登録しています。:<br/><strong>%{name}</strong>, <em>%{email}</em>"
+        password_confirmation: パスワード（確認）
+        done: "既にアカウントが存在します：<br/><strong>%{name}</strong>, <em>%{email}</em>"
         next: アカウントを作成する
       step_2:
-        title: "ステップ 2/2 &mdash; 最初のサイトを作成"
-        explanations: "もうすこしで完成です。サイト名を入力して、デフォルトのロケールを選択してください。"
+        title: "Step 2/2 &mdash; サイト作成"
+        explanations: "作成するサイトの名前と地域をロケールを選択してください。"
         default_site_locale: ロケール
-        default_site_locales_hints: その他のロケールは設定パネルから追加できます。
+        default_site_locales_hints: ロケールは設定画面から追加することもできます。
         next: サイトを作成する
 
     public:
       pages:
         show_toolbar:
           statuses:
-            loading: "ロードしています...."
-            disabled: "インラインエディタは無効化されています"
+            loading: "読み込み中..."
+            disabled: インラインエディタは無効です。
           labels:
-            save_changes: "変更を保存する: "
-            editing_mode: "編集モード: "
-            lang: "言語: "
+            save_changes: 変更を保存する：
+            editing_mode: 編集モード：
+            lang: 言語：
           buttons:
             back: バックオフィスに戻る
-            confirm: 確認する
+            confirm: 確認
             cancel: キャンセル

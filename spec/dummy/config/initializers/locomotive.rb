@@ -8,8 +8,8 @@ Locomotive.configure do |config|
   config.multi_sites do |multi_sites|
     # each new website you add will have a default entry based on a subdomain
     # and the multi_site_domain value (ex: website_1.locomotivehosting.com).
-    multi_sites.domain = 'engine.dev' #'myhostingplatform.com'
-    # multi_sites.domain = 'example.com'
+    # multi_sites.domain = 'engine.dev' #'myhostingplatform.com'
+    multi_sites.domain = 'example.com'
     # multi_sites.domain = 'locomotivehosting.fr'
 
     # define the reserved subdomains
@@ -33,11 +33,11 @@ Locomotive.configure do |config|
   #   :max_content_types  => 4
   # }
 
-  # default locale (for now, only en, de, fr, pt-BR and it are supported)
+  # default locale (for now, only en, de, fr, pl, pt-BR, it, nl, nb and ja are supported)
   config.default_locale = :en
 
   # available locales suggested to "localize" a site. You will have to pick up at least one among that list.
-  config.site_locales = %w{en de fr pt-BR it nl nb es ru}
+  config.site_locales = %w{en de fr pl pt-BR it nl nb es ru ja}
 
   # tell if logs are enabled. Useful for debug purpose.
   config.enable_logs = true

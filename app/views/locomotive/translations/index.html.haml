@@ -5,13 +5,24 @@
 
 - if can? :create, Locomotive::Translation
   - content_for :buttons do
-    = local_action_button t('.new_translation'), new_translation_path, :class => 'new' if can?(:create, Locomotive::Translation)
-    
-- if @translations.present?
-  %ul#entries-list.list
+    = local_action_button t('.new'), new_translation_path, icon: 'icon-plus' if can?(:create, Locomotive::Translation)
+
+- if @translations.empty?
+  %p.no-items!= t('.no_items', url: new_translation_path)
+- else
+  %ul.list
     - @translations.each do |translation|
       %li.item
+
         %strong
           = link_to "#{translation.key}", edit_translation_path(translation)
+
         %em= translation.values[I18n.locale.to_s]
+
         - untranslated_locales(current_site, translation)
+
+        .more
+          %span!= t('.updated_at')
+          = l translation.updated_at, format: :short
+
+          = link_to_icon :trash, translation_url(translation), title: t('.remove', key: translation.key, default: ''), class: 'remove', data: { confirm: t('locomotive.messages.confirm') }, method: :delete

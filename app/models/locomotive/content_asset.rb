@@ -1,8 +1,7 @@
 module Locomotive
   class ContentAsset
 
-    include ::Mongoid::Document
-    include ::Mongoid::Timestamps
+    include Locomotive::Mongoid::Document
 
     ## extensions ##
     include Extensions::Asset::Types
@@ -35,10 +34,6 @@ module Locomotive
 
     def to_liquid
       { :url => self.source.url }.merge(self.attributes).stringify_keys
-    end
-
-    def as_json(options = {})
-      Locomotive::ContentAssetPresenter.new(self).as_json
     end
 
   end

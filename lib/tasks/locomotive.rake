@@ -36,9 +36,10 @@ namespace :locomotive do
     account = Locomotive::Account.create :email => email, :password => password, :password_confirmation => password_confirm, :name => name
 
     # TODO: this should be changed to work for multi-sites (see desc)
-    site = Locomotive::Site.first
-    site.memberships.build :account => account, :role => 'admin'
-    site.save!
+    if site = Locomotive::Site.first
+      site.memberships.build :account => account, :role => 'admin'
+      site.save!
+    end
   end
 
   namespace :upgrade do
@@ -56,6 +57,20 @@ namespace :locomotive do
       end
     end
 
+  end # namespace: upgrade
+
+  desc 'Generate the documentation about the REST API'
+  task :generate_api_doc => :environment do
+
+    require 'locomotive/misc/api_documentation'
+
+    output = Locomotive::Misc::ApiDocumentation.generate
+
+    path = File.join(Dir.pwd, 'public')
+
+    File.open(File.join(path, 'locomotive_api.html'), 'w') do |file|
+      file.write(output)
+    end
   end
 
   namespace :maintenance do

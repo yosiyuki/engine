@@ -7,9 +7,9 @@ module Locomotive
 
         included do
           ## fields ##
-          field :serialized_template,   :type => Binary, :localize => true
-          field :template_dependencies, :type => Array, :default => [], :localize => true
-          field :snippet_dependencies,  :type => Array, :default => [], :localize => true
+          field :serialized_template,   type: Binary, localize: true
+          field :template_dependencies, type: Array, default: [], localize: true
+          field :snippet_dependencies,  type: Array, default: [], localize: true
 
           ## virtual attributes
           attr_reader :template_changed
@@ -22,17 +22,23 @@ module Locomotive
           validate :template_must_be_valid
 
           ## scopes ##
-          scope :pages, lambda { |domain| { :any_in => { :domains => [*domain] } } }
+          scope :pages, lambda { |domain| { any_in: { domains: [*domain] } } }
         end
 
         def template
           @template ||= Marshal.load(self.serialized_template.to_s) rescue nil
         end
 
+        def force_serialize_template
+          self.serialize_template
+          @done_serialize_template = true
+        end
+
         protected
 
         def serialize_template
-          if self.new_record? || self.raw_template_changed?
+          if !@done_serialize_template &&
+              (self.new_record? || self.raw_template_changed?)
             @template_changed = true
 
             @parsing_errors = []
@@ -40,11 +46,11 @@ module Locomotive
             begin
               self._parse_and_serialize_template
             rescue ::Liquid::SyntaxError => error
-              @parsing_errors << I18n.t(:liquid_syntax, :fullpath => self.fullpath, :error => error.to_s, :scope => [:errors, :messages, :page])
+              @parsing_errors << I18n.t(:liquid_syntax, fullpath: self.fullpath, error: error.to_s, scope: [:errors, :messages, :page])
             rescue ::Locomotive::Liquid::PageNotFound => error
-              @parsing_errors << I18n.t(:liquid_extend, :fullpath => self.fullpath, :scope => [:errors, :messages, :page])
+              @parsing_errors << I18n.t(:liquid_extend, fullpath: self.fullpath, scope: [:errors, :messages, :page])
             rescue ::Locomotive::Liquid::PageNotTranslated => error
-              @parsing_errors << I18n.t(:liquid_translation, :fullpath => self.fullpath, :scope => [:errors, :messages, :page])
+              @parsing_errors << I18n.t(:liquid_translation, fullpath: self.fullpath, scope: [:errors, :messages, :page])
             end
           end
         end
@@ -61,7 +67,7 @@ module Locomotive
         def parse(context = {})
           self.disable_all_editable_elements
 
-          default_context = { :site => self.site, :page => self, :templates => [], :snippets => [] }
+          default_context = { site: self.site, page: self, templates: [], snippets: [] }
 
           context = default_context.merge(context)
 
@@ -94,7 +100,7 @@ module Locomotive
           # finally save them all
           ::Locomotive::Page.without_callback(:save, :after, :update_template_descendants) do
             template_descendants.each do |page|
-              page.save(:validate => false)
+              page.save(validate: false)
             end
           end
         end
@@ -105,7 +111,7 @@ module Locomotive
           end
 
           direct_descendants.each do |page|
-            page.send(:_parse_and_serialize_template, { :cached_parent => self, :cached_pages => cached })
+            page.send(:_parse_and_serialize_template, { cached_parent: self, cached_pages: cached })
 
             template_descendants.delete(page) # no need to loop over it next time
 

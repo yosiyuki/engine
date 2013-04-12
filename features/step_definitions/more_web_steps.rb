@@ -25,6 +25,14 @@ Then /^"([^"]*)" should not be visible$/ do |text|
   end
 end
 
+Then(/^I should see "(.*?)" in the html code$/) do |content|
+  page.body.include?(content).should be_true
+end
+
+Then(/^I should not see "(.*?)" in the html code$/) do |content|
+  page.body.include?(content).should be_false
+end
+
 Then /^"([^"]*)" should( not)? be an option for "([^"]*)"(?: within "([^\"]*)")?$/ do |value, negate, field, selector|
   with_scope(selector) do
     expectation = negate ? :should_not : :should
@@ -50,7 +58,39 @@ Given /^I disable the CSRF protection for public submission requests$/ do
   # pending # express the regexp above with the code you wish you had
 end
 
+Then /^the response status should be (\d+)$/ do |status|
+  page.status_code.should == status.to_i
+end
+
 Then /^it returns a (\d+) error page$/ do |code|
-  puts page.status_code
   page.status_code.should == code.to_i
+end
+
+Then /^I should see the following xml output:$/ do |xml_output|
+  xml_output.gsub!(':now', Date.today.to_s)
+  response = Hash.from_xml(page.source)
+  expected = Hash.from_xml(xml_output)
+  expected.diff(response).should == {}
+end
+
+def wait_for_ajax(&block)
+  start_time = Time.now
+  while Time.now < start_time + Capybara.default_wait_time
+    begin
+      block.call
+      break
+    rescue RSpec::Expectations::ExpectationNotMetError => e
+      raise e
+    rescue
+      # Try again
+    end
+  end
+end
+
+Then /^after the AJAX finishes, (.*)$/ do |*args|
+  step_str = args[0]
+  step_arg = args[1]
+  wait_for_ajax do
+    step(step_str, step_arg)
+  end
 end

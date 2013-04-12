@@ -14,6 +14,7 @@ de:
       en: Englisch
       de: Deutsch
       fr: Französisch
+      pl: Polnisch
       pt-BR: "Bras. Portugiesisch"
       it: Italienisch
       nl: Niederländisch
@@ -21,6 +22,7 @@ de:
       es: Spanisch
       ru: Russisch
       et: Estnisch
+      ja: Japanisch
 
     buttons:
       login: Einloggen

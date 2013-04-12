@@ -13,6 +13,7 @@ en:
       en: English
       de: German
       fr: French
+      pl: Polish
       pt-BR: "Brazilian Portuguese"
       it: Italian
       nl: Dutch
@@ -20,6 +21,7 @@ en:
       es: Spanish
       ru: Russian
       et: Estonian
+      ja: Japanese
 
     messages:
       confirm: Are you sure ?
@@ -143,6 +145,9 @@ en:
           day: 1 day
           week: 1 week
           month: 1 month
+        redirect_type:
+          permanent: "Permanent (301)"
+          temporary: "Temporary (302)"
 
     snippets:
       index:
@@ -223,14 +228,20 @@ en:
         title: "Insert theme image"
         no_items: "There are no images for now."
         upload: "Upload theme images"
+
     translations:
       untranslated: "Untranslated locales: %{list}"
       index:
         title: Translations
-        new_translation: New translation
-      form:
-        create: New translation
-        update: Edit translation
+        new: new translation
+        no_items: "There are no translations for now. Just click <a href=\"%{url}\">here</a> to create the first one."
+        remove: Remove %{key}
+      new:
+        title: "New translation"
+        help: "Pages/snippets can share the same template for all the locales except for some labels which can be handled by the <b>translate</b> liquid tag."
+      edit:
+        title: "Editing %{key}"
+        help: "You can use that translation key with the following liquid code : <span class='code'>{{ '%{key}' | translate }}</span>."
 
     content_assets:
       picker:
@@ -280,8 +291,9 @@ en:
         has_many:
           new_entry: New entry
 
-    image_picker:
-      link: Insert an image into the code
+    code_editing:
+      image_picker: Insert an image into the code
+      copy_template: Copy template from main locale
 
     cross_domain_sessions:
       new:

@@ -1,11 +1,11 @@
 module Locomotive
   module Public
-    class SitemapsController < BaseController
+    class SitemapsController < Public::BaseController
 
       respond_to :xml
 
       def show
-        @pages = current_site.pages.published
+        @pages = current_site.pages.published.order_by([:depth.asc, :position.asc])
         respond_with @pages
       end
 

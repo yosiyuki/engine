@@ -6,10 +6,13 @@ module Liquid
         def render(context)
           if context.registers[:current_locomotive_account] && context.registers[:inline_editor]
 
-            plugins = 'common/format,common/table,common/list,common/link,common/highlighteditables,common/block,common/undo,common/contenthandler,common/paste,common/commands,common/abbr,common/align,common/horizontalruler,custom/locomotive_media'
+            plugins = 'common/ui,common/format,common/table,common/list,common/link,common/highlighteditables,common/block,common/undo,common/contenthandler,common/paste,common/commands,common/abbr,common/align,common/horizontalruler,common/image,custom/locomotive_media'
 
             controller = context.registers[:controller]
             controller.instance_variable_set(:@plugins, plugins)
+
+            page = context.registers[:page].to_presenter.as_json_for_html_view
+            page['lang'] = context['locale']
 
             html = <<-HTML
               %meta{ :content => true, :name => 'inline-editor' }
@@ -20,7 +23,7 @@ module Liquid
               %script{ :type => 'text/javascript' }
                 :plain
                   Aloha.ready(function() \{
-                    window.parent.application_view.set_page(#{controller.view_context.j context.registers[:page].to_presenter.as_json_for_html_view.to_json.html_safe});
+                    window.parent.application_view.set_page(#{controller.view_context.j page.to_json.html_safe});
                   \});
             HTML
 

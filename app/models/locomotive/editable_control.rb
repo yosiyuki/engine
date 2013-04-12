@@ -31,10 +31,6 @@ module Locomotive
       end
     end
 
-    def as_json(options = {})
-      Locomotive::EditableControlPresenter.new(self).as_json
-    end
-
     protected
 
     def propagate_content
